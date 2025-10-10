@@ -1,0 +1,225 @@
+@tailwind base;@tailwind base;
+
+@tailwind components;@tailwind components;
+
+@tailwind utilities;@tailwind utilities;
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+
+
+/* Custom styles for cricket tournament *//* Custom styles for cricket tournament */
+
+:root {:root {
+
+  --cricket-green: #00833E;  --cricket-green: #00833E;
+
+  --cricket-gold: #FFD700;  --cricket-gold: #FFD700;
+
+}}
+
+
+
+body {body {
+
+  font-family: 'Inter', sans-serif;  font-family: 'Inter', sans-serif;
+
+  background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);  background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+
+}}
+
+
+
+h1, h2, h3, h4, h5, h6 {h1, h2, h3, h4, h5, h6 {
+
+  font-family: 'Poppins', sans-serif;  font-family: 'Poppins', sans-serif;
+
+}}
+
+
+
+/* Custom scrollbar *//* Custom scrollbar */
+
+::-webkit-scrollbar {::-webkit-scrollbar {
+
+  width: 8px;  width: 8px;
+
+}}
+
+
+
+::-webkit-scrollbar-track {::-webkit-scrollbar-track {
+
+  background: #f1f1f1;  background: #f1f1f1;
+
+}}
+
+
+
+::-webkit-scrollbar-thumb {::-webkit-scrollbar-thumb {
+
+  background: var(--cricket-green);  background: var(--cricket-green);
+
+  border-radius: 4px;  border-radius: 4px;
+
+}}
+
+
+
+::-webkit-scrollbar-thumb:hover {::-webkit-scrollbar-thumb:hover {
+
+  background: #005a2b;  background: #005a2b;
+
+}}
+
+
+
+/* Smooth scrolling *//* Smooth scrolling */
+
+html {html {
+
+  scroll-behavior: smooth;  scroll-behavior: smooth;
+
+}}
+
+
+
+/* Animation keyframes *//* Animation keyframes */
+
+@keyframes float {@keyframes float {
+
+  0%, 100% { transform: translateY(0px); }  0%, 100% { transform: translateY(0px); }
+
+  50% { transform: translateY(-20px); }  50% { transform: translateY(-20px); }
+
+}}
+
+
+
+@keyframes bounce-slow {@keyframes bounce-slow {
+
+  0%, 100% { transform: translateY(0); }  0%, 100% { transform: translateY(0); }
+
+  50% { transform: translateY(-10px); }  50% { transform: translateY(-10px); }
+
+}}
+
+
+
+@keyframes scroll-left {@keyframes scroll-left {
+
+  0% { transform: translateX(0); }  0% { transform: translateX(0); }
+
+  100% { transform: translateX(-100%); }  100% { transform: translateX(-100%); }
+
+}}
+
+
+
+@keyframes scroll-right {@keyframes scroll-right {
+
+  0% { transform: translateX(-100%); }  0% { transform: translateX(-100%); }
+
+  100% { transform: translateX(0); }  100% { transform: translateX(0); }
+
+}}
+
+
+
+/* Custom utilities *//* Custom utilities */
+
+.animate-float {.animate-float {
+
+  animation: float 6s ease-in-out infinite;  animation: float 6s ease-in-out infinite;
+
+}}
+
+
+
+.animate-bounce-slow {.animate-bounce-slow {
+
+  animation: bounce-slow 3s ease-in-out infinite;  animation: bounce-slow 3s ease-in-out infinite;
+
+}}
+
+
+
+.animate-scroll-left {.animate-scroll-left {
+
+  animation: scroll-left 20s linear infinite;  animation: scroll-left 20s linear infinite;
+
+}}
+
+
+
+.animate-scroll-right {.animate-scroll-right {
+
+  animation: scroll-right 20s linear infinite;  animation: scroll-right 20s linear infinite;
+
+}}
+
+
+
+/* Cricket-specific styles *//* Cricket-specific styles */
+
+.cricket-ball {.cricket-ball {
+
+  background: radial-gradient(circle at 30% 30%, #ffffff, #ff0000);  background: radial-gradient(circle at 30% 30%, #ffffff, #ff0000);
+
+  border: 2px solid #000;  border: 2px solid #000;
+
+}}
+
+
+
+.cricket-field {.cricket-field {
+
+  background: radial-gradient(ellipse at center, #4ade80, #22c55e);  background: radial-gradient(ellipse at center, #4ade80, #22c55e);
+
+}}
+
+
+
+/* Glass morphism effect *//* Glass morphism effect */
+
+.glass {.glass {
+
+  background: rgba(255, 255, 255, 0.25);  background: rgba(255, 255, 255, 0.25);
+
+  backdrop-filter: blur(10px);  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.18);  border: 1px solid rgba(255, 255, 255, 0.18);
+
+}}
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
