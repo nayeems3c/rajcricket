@@ -2,7 +2,6 @@ import { motion, useScroll } from "motion/react";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
-// Tournament logo - you can replace this with your actual logo
 const tournamentLogo = "/assets/rrt10-logo.svg";
 
 export function Navigation() {
@@ -45,33 +44,29 @@ export function Navigation() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="max-w-7xl mx-auto px-4 py-2">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
+      <div className="max-w-7xl mx-auto px-4 py-1">
+        <div className="flex items-center justify-between h-12">
           <motion.a
             href="#"
-            className="flex items-center"
+            className="flex items-center h-full"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
-            <div
-              className={`transition-all duration-300 ${
-                isScrolled
-                  ? "h-12 bg-white px-4 py-2 rounded-xl shadow-lg border-2 border-[#00833E]/20"
-                  : "h-14 bg-white/95 backdrop-blur-md px-4 py-2 rounded-xl shadow-xl border-2 border-white/30"
-              }`}
-            >
+            <div className="transition-all duration-300 flex items-center px-2">
               <img
                 src={tournamentLogo}
                 alt="RRT10 Cricket Tournament"
-                className="h-full w-auto object-contain"
-                style={{ imageRendering: "crisp-edges" }}
+                className="h-22 w-auto object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
+                style={{ 
+                  imageRendering: "-webkit-optimize-contrast",
+                  filter: "contrast(1.2) brightness(1.15) saturate(1.15) drop-shadow(0 0 2px rgba(255,255,255,0.5))",
+                  height: "5.5rem",
+                }}
               />
             </div>
           </motion.a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navItems.map((item, index) => (
               <motion.a
                 key={item.label}
@@ -102,9 +97,22 @@ export function Navigation() {
                 />
               </motion.a>
             ))}
+            
+            <motion.a
+              href="/assets/tournament-rules.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#00833E] hover:bg-[#006b33] text-white px-8 py-2 rounded-md shadow-lg shadow-[#00833E]/50 hover:shadow-xl hover:shadow-[#00833E]/60 transition-all duration-300 font-medium"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Rulebook
+            </motion.a>
           </div>
 
-          {/* Mobile Menu Button */}
           <motion.button
             className={`md:hidden p-2 rounded-lg transition-all duration-300 ${
               isScrolled
@@ -128,7 +136,6 @@ export function Navigation() {
           </motion.button>
         </div>
 
-        {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <motion.div
             className="md:hidden mt-4 pb-2 bg-white rounded-xl shadow-2xl border-2 border-[#00833E]/20 overflow-hidden"
@@ -141,7 +148,7 @@ export function Navigation() {
               <motion.a
                 key={item.label}
                 href={item.href}
-                className="block px-6 py-3 text-[#1A1A1A] hover:bg-gradient-to-r hover:from-[#00833E]/10 hover:to-transparent hover:text-[#00833E] transition-all duration-200 border-b border-[#00833E]/10 last:border-0"
+                className="block px-6 py-3 text-[#1A1A1A] hover:bg-gradient-to-r hover:from-[#00833E]/10 hover:to-transparent hover:text-[#00833E] transition-all duration-200 border-b border-[#00833E]/10"
                 onClick={() => setIsMobileMenuOpen(false)}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -150,6 +157,20 @@ export function Navigation() {
                 {item.label}
               </motion.a>
             ))}
+            
+            <motion.a
+              href="/assets/tournament-rules.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block m-3 px-8 py-3 rounded-md bg-[#00833E] hover:bg-[#006b33] text-white shadow-lg shadow-[#00833E]/50 hover:shadow-xl hover:shadow-[#00833E]/60 transition-all duration-300 font-medium text-center"
+              onClick={() => setIsMobileMenuOpen(false)}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.3 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Rulebook
+            </motion.a>
           </motion.div>
         )}
       </div>

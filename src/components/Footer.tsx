@@ -45,10 +45,23 @@ export function Footer() {
             © 2025 Rajshahi Regional Tape T-10 Cricket Tournament
           </p>
 
-          {/* Powered by */}
-          <p className="text-center text-white/60 text-sm">
-            Powered by Cricket Bangladesh Association
-          </p>
+          {/* Powered by and Developed by on same line */}
+          <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-2 sm:gap-8 w-full text-white/60 text-sm px-4">
+            <p className="text-center sm:text-left">
+              Powered by rajshahicricket.com
+            </p>
+            <p className="text-center sm:text-right">
+              Developed by{" "}
+              <a
+                href="https://shakirahmed.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:underline"
+              >
+                Shakir Ahmed
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

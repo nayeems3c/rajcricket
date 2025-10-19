@@ -10,7 +10,7 @@ const districts = [
   "Bogura",
   "Sirajganj",
   "Pabna",
-  "Chapainawabganj",
+  "Chapai",
   "Joypurhat",
 ];
 
@@ -84,11 +84,11 @@ export function TeamRegistration() {
               </div>
 
               <div>
-                <Label htmlFor="contact" className="text-[#1A1A1A]">
+                <Label htmlFor="contact-number" className="text-[#1A1A1A]">
                   Contact Number
                 </Label>
                 <Input
-                  id="contact"
+                  id="contact-number"
                   type="tel"
                   placeholder="+880 XXX XXX XXXX"
                   className="mt-2 bg-white border-[#00833E]/20 focus:border-[#00833E]"

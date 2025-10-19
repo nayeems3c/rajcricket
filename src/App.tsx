@@ -9,6 +9,7 @@ import { PhotoGallery } from "./components/PhotoGallery";
 import { VideoTeaser } from "./components/VideoTeaser";
 import { ContactSection } from "./components/ContactSection";
 import { Footer } from "./components/Footer";
+import { WelcomeBanner } from "./components/WelcomeBanner";
 
 export default function App() {
   // Hero background
@@ -33,6 +34,9 @@ export default function App() {
   return (
     <div className="size-full overflow-x-hidden relative">
       <CricketBackground />
+      
+      {/* Welcome Banner Popup */}
+      <WelcomeBanner />
       
       <style>{`
         html {

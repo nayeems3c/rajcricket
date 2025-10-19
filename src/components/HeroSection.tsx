@@ -78,7 +78,7 @@ export function HeroSection({ backgroundImage }: HeroSectionProps) {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <Clock className="w-5 h-5 text-[#FFD700]" />
-          <span className="text-white">Tournament Starts In: 15 Days</span>
+          <span className="text-white">Tournament Starts In: 20th November</span>
         </motion.div>
       </div>
 

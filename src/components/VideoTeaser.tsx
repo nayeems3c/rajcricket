@@ -1,12 +1,20 @@
 import { Play } from "lucide-react";
 import { motion } from "motion/react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { useState } from "react";
 
 interface VideoTeaserProps {
   thumbnailImage: string;
 }
 
 export function VideoTeaser({ thumbnailImage }: VideoTeaserProps) {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoId = "EcWHwZHfSqQ"; // YouTube video ID
+
+  const handlePlayClick = () => {
+    setIsPlaying(true);
+  };
+
   return (
     <section className="py-20 px-4 bg-white" id="video">
       <div className="max-w-7xl mx-auto">
@@ -29,44 +37,58 @@ export function VideoTeaser({ thumbnailImage }: VideoTeaserProps) {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          onClick={handlePlayClick}
         >
           <div className="relative aspect-video">
-            <ImageWithFallback
-              src={thumbnailImage}
-              alt="Video teaser thumbnail"
-              className="w-full h-full object-cover"
-            />
-            {/* Dark overlay */}
-            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300" />
-            
-            {/* Play button */}
-            <motion.div
-              className="absolute inset-0 flex items-center justify-center"
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="w-24 h-24 bg-[#00833E] rounded-full flex items-center justify-center shadow-lg shadow-[#00833E]/50 group-hover:shadow-xl group-hover:shadow-[#00833E]/70 transition-all duration-300">
-                <div className="w-20 h-20 bg-[#FFD700] rounded-full flex items-center justify-center">
-                  <Play className="w-10 h-10 text-[#00833E] fill-[#00833E] ml-1" />
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Pulsing ring animation */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <motion.div
-                className="w-24 h-24 rounded-full border-4 border-[#FFD700]"
-                animate={{
-                  scale: [1, 1.5, 1.5],
-                  opacity: [0.8, 0, 0],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeOut",
-                }}
+            {isPlaying ? (
+              <iframe
+                className="w-full h-full"
+                src={`https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`}
+                title="RRT10 Cricket Tournament Teaser"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
               />
-            </div>
+            ) : (
+              <>
+                <ImageWithFallback
+                  src={thumbnailImage}
+                  alt="Video teaser thumbnail"
+                  className="w-full h-full object-cover"
+                />
+                {/* Dark overlay */}
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300" />
+                
+                {/* Play button */}
+                <motion.div
+                  className="absolute inset-0 flex items-center justify-center"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="w-24 h-24 bg-[#00833E] rounded-full flex items-center justify-center shadow-lg shadow-[#00833E]/50 group-hover:shadow-xl group-hover:shadow-[#00833E]/70 transition-all duration-300">
+                    <div className="w-20 h-20 bg-[#FFD700] rounded-full flex items-center justify-center">
+                      <Play className="w-10 h-10 text-[#00833E] fill-[#00833E] ml-1" />
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Pulsing ring animation */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <motion.div
+                    className="w-24 h-24 rounded-full border-4 border-[#FFD700]"
+                    animate={{
+                      scale: [1, 1.5, 1.5],
+                      opacity: [0.8, 0, 0],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeOut",
+                    }}
+                  />
+                </div>
+              </>
+            )}
           </div>
         </motion.div>
 
