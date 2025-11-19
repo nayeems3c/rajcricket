@@ -74,11 +74,11 @@ export function TeamRegistration() {
 
               <div>
                 <Label htmlFor="captain" className="text-[#1A1A1A]">
-                  Captain Name
+                  Team Owner's Name
                 </Label>
                 <Input
                   id="captain"
-                  placeholder="Enter captain's name"
+                  placeholder="Enter Owner's name"
                   className="mt-2 bg-white border-[#00833E]/20 focus:border-[#00833E]"
                 />
               </div>
